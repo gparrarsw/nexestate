@@ -14,17 +14,20 @@ export interface AuthenticatedAdmin {
 }
 
 /**
- * Sends a magic link to the given email via Supabase Auth.
- * Redirects to /auth/callback after sign-in.
+ * Signs in with email and password via Supabase Auth.
  */
-export async function signInWithMagicLink(email: string): Promise<void> {
+export async function signInWithPassword(email: string, password: string): Promise<void> {
   const supabase = await createClient()
-  const { error } = await supabase.auth.signInWithOtp({
-    email,
-    options: {
-      emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
-    },
-  })
+  const { error } = await supabase.auth.signInWithPassword({ email, password })
+  if (error) throw error
+}
+
+/**
+ * Signs up with email and password via Supabase Auth.
+ */
+export async function signUpWithPassword(email: string, password: string): Promise<void> {
+  const supabase = await createClient()
+  const { error } = await supabase.auth.signUp({ email, password })
   if (error) throw error
 }
 
