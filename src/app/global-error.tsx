@@ -1,8 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-import * as Sentry from "@sentry/nextjs";
-
 interface GlobalErrorProps {
   error: Error & { digest?: string };
   reset: () => void;
@@ -11,9 +8,6 @@ interface GlobalErrorProps {
 // Root error boundary — catches errors in layout.tsx
 // No Tailwind here: layout may not have loaded
 export default function GlobalError({ error, reset }: GlobalErrorProps) {
-  useEffect(() => {
-    Sentry.captureException(error);
-  }, [error]);
 
   return (
     <html lang="es">
