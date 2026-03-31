@@ -3,9 +3,8 @@
  * Canonical source: projects/nexestate/PRODUCT_IDENTITY.md
  */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
 
 /* ================================================================
    ROOT TOKENS
