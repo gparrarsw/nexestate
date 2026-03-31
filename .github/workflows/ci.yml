@@ -54,7 +54,7 @@ jobs:
             -H "Content-Type: application/json" \
             -d @- <<EOF
           {
-            "channel": "C0AQPJNUQEL",
+            "channel": "C0AQW5NLG4Q",
             "unfurl_links": false,
             "text": "🔀 NexEstate PR #${PR_NUM}: ${PR_TITLE}",
             "blocks": [
@@ -114,7 +114,7 @@ jobs:
             -H "Content-Type: application/json" \
             -d @- <<EOF
           {
-            "channel": "C0APZ38637W",
+            "channel": "C0APVFPV7C3",
             "unfurl_links": false,
             "text": "🚀 NexEstate deployed to production: ${MSG}",
             "blocks": [
